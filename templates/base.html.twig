@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Welcome to CSA Dashboard!{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="CSA Dashboard">
+    <meta name="keywords" content="CSA Dashboard">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('main') }}
+    {% endblock %}
+</head>
+<body class="{% block body_class %}{{ bodyClass is defined ? bodyClass : '' }}{% endblock %}">
+<div class="root" id="app">
+    <!--navbar.begin-->
+    <nav class="navbar">
+        <div class="container navbar__container">
+            <a href="javascript:history.back()" class="navbar__back">
+                <svg class="navbar__back-icon">
+                    <use xlink:href="#i-arrow-left"></use>
+                </svg>
+            </a>
+            <a href="#" class="logo navbar__logo">
+                <img class="logo__img" loading="lazy" src="{{ asset('img/logo.svg') }}" alt="">
+            </a>
+            <button class="navbar__hamburger">
+                <span class="navbar__hamburger-line"></span>
+                <span class="navbar__hamburger-line"></span>
+                <span class="navbar__hamburger-line"></span>Hu=
+            </button>
+            <div class="navbar__collapse">
+                <div class="navbar__inner">
+                    <button class="navbar__close"></button>
+                    <div class="navbar__menu">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section class="content">
+            {% block body %}{% endblock %}
+        </section>
+    </main>
+
+{#    <modal :component="modalComponent" :data="modalData" :type="modalType" :id="modalId" :is-loading="modalIsLoading"></modal>#}
+</div>
+
+
+{#{% block modal %}#}
+{#    <div class="modal" id="hd_modal">#}
+{#        <div class="modal__overlay"></div>#}
+{#        <div class="modal__inner">#}
+{#            <div class="modal__content">#}
+{#                <button class="modal__close modal-close-btn"></button>#}
+{#                <div class="modal-content-container"></div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock %}#}
+
+<div id="aws-container" style="display: none"></div>
+
+<svg class="sr-only" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+    {% block icons %}
+        <symbol id="i-lock" viewbox="0 0 19.24 24.736">
+            <path fill="currentColor"
+                  d="M24.787,26.7a1.374,1.374,0,1,1,.916,0v2.376a.458.458,0,0,1-.916,0Zm-6.413-7.252a2.751,2.751,0,0,0-2.749,2.757v9.145a2.756,2.756,0,0,0,2.757,2.757H32.108a2.751,2.751,0,0,0,2.757-2.757V22.21a2.755,2.755,0,0,0-2.749-2.757V16.245a6.872,6.872,0,0,0-13.743,0Zm2.749,0V16.247a4.123,4.123,0,1,1,8.245,0v3.206Z"
+                  transform="translate(-15.625 -9.375)" />
+        </symbol>
+        <symbol id="i-arrow-left" viewbox="0 0 11.135 19.7">
+            <path fill="currentColor"
+                  d="M14.849,33.032l7.657-7.657a1.285,1.285,0,1,1,1.817,1.817l-8.565,8.566a1.286,1.286,0,0,1-1.818,0L5.375,27.193a1.285,1.285,0,1,1,1.817-1.817Z"
+                  transform="translate(36.135 -4.998) rotate(90)" />
+        </symbol>
+        <symbol id="i-arrow-right" viewbox="0 0 11.135 19.7">
+            <path fill="currentColor" d="M14.849,33.032l7.657-7.657a1.285,1.285,0,1,1,1.817,1.817l-8.565,8.566a1.286,1.286,0,0,1-1.818,0L5.375,27.193a1.285,1.285,0,1,1,1.817-1.817Z" transform="translate(-24.999 24.699) rotate(-90)"/>
+        </symbol>
+        <symbol id="i-arrow-down" viewbox="0 0 15.699 8.874">
+            <path fill="currentColor" d="M7.849,6.4l6.1-6.1A1.024,1.024,0,0,1,15.4,1.748L8.574,8.574a1.025,1.025,0,0,1-1.449,0L.3,1.748A1.024,1.024,0,0,1,1.748.3Z"/>
+        </symbol>
+        <symbol id="i-call-mute" viewbox="0 0 34 34">
+            <path fill="currentColor" transform="translate(-3.14 8.853)" d="M24.659,2.372,14.831,9.15c-.678.339-.678.339,0,1.017.339.678.339.678.678.339L25.676,3.389c.339-.339.339-.339,0-1.017s-.339-.677-1.017,0ZM20.253,0a2.673,2.673,0,0,0-2.711,2.711V5.586L22.857,1.92A2.688,2.688,0,0,0,20.253,0Zm2.711,3.592-5.423,3.8v.745a2.711,2.711,0,1,0,5.423,0ZM25,6.778c-.678,0-.678,0-.678.678v.677A3.916,3.916,0,0,1,20.253,12.2a3.781,3.781,0,0,1-3.05-1.355l-1.166.745a6.411,6.411,0,0,0,3.538,1.965v2.033c0,.678,0,.678.678.678s.678,0,.678-.678V13.555c3.05-.677,4.744-2.711,4.744-5.422V7.455c0-.677,0-.677-.677-.677Z"/>
+        </symbol>
+        <symbol id="i-call-pause" viewbox="0 0 34 34">
+            <g transform="translate(11.606 10.004)">
+                <path fill="currentColor" d="M58.768,38.25V26.124a1,1,0,0,0-.928-.928H55.631a.928.928,0,0,0-.928.928V38.25a1,1,0,0,0,.928.928H57.84A.928.928,0,0,0,58.768,38.25Z" transform="translate(-47.983 -25.196)"/>
+                <path fill="currentColor" d="M34.944,38.25V26.124a1,1,0,0,0-.928-.928H31.807a.928.928,0,0,0-.928.928V38.25a1,1,0,0,0,.928.928h2.209A.928.928,0,0,0,34.944,38.25Z" transform="translate(-30.879 -25.196)"/>
+            </g>
+        </symbol>
+        <symbol id="i-call-phone" viewbox="0 0 513.64 513.64">
+            <path fill="currentColor" d="M499.66,376.96l-71.68-71.68c-25.6-25.6-69.12-15.359-79.36,17.92c-7.68,23.041-33.28,35.841-56.32,30.72
+			c-51.2-12.8-120.32-79.36-133.12-133.12c-7.68-23.041,7.68-48.641,30.72-56.32c33.28-10.24,43.52-53.76,17.92-79.36l-71.68-71.68
+			c-20.48-17.92-51.2-17.92-69.12,0l-48.64,48.64c-48.64,51.2,5.12,186.88,125.44,307.2c120.32,120.32,256,176.641,307.2,125.44
+			l48.64-48.64C517.581,425.6,517.581,394.88,499.66,376.96z"/>
+        </symbol>
+        <symbol id="i-arrow-down-bold" viewbox="0 0 14.4 14.4">
+            <rect fill="none" width="14.4" height="14.4"/>
+            <g fill="currentColor">
+                <path fill="currentColor" d="M2.9,0H6.5V4.8h2.9L4.7,9.5,0,4.8H2.9V0Z" transform="translate(2.496 2.4)"/>
+            </g>
+        </symbol>
+        <symbol id="i-circle-tick" viewbox="0 0 19.517 19.517">
+            <g transform="translate(-6.001 -5.969)">
+                <path fill="currentColor" d="M43.932,14.257a.885.885,0,0,0-1.254,0L34.433,22.5l-2.921-2.92a.887.887,0,0,0-1.254,1.254l3.549,3.549a.885.885,0,0,0,1.254,0l8.871-8.871a.885.885,0,0,0,0-1.254Z" transform="translate(-18.674 -6.247)"/>
+                <path fill="currentColor" d="M25.323,13.778a.887.887,0,1,0-1.739.355,7.984,7.984,0,1,1-3.926-5.368.89.89,0,0,0,.87-1.552,9.758,9.758,0,1,0,4.99,8.521,9.954,9.954,0,0,0-.195-1.956Z" transform="translate(0 0)"/>
+            </g>
+        </symbol>
+        <symbol id="i-edit" viewbox="0 0 21.802 21.504">
+            <g transform="translate(-2.5 -3.072)">
+                <path fill="currentColor"
+                      d="M20.006,31.24H4.588V16.487h8.994L15.67,14.4H4.29A1.787,1.787,0,0,0,2.5,16.165V31.537A1.772,1.772,0,0,0,4.29,33.3H20.281a1.772,1.772,0,0,0,1.79-1.766V20l-2.088,2.088v9.154Z"
+                      transform="translate(0 -8.728)" />
+                <path fill="currentColor" d="M41.68,22.029,48.7,15l3.05,3.05L44.73,25.079Z"
+                      transform="translate(-30.191 -9.194)" />
+                <path fill="currentColor"
+                      d="M30.34,51.656a.741.741,0,0,0-.184.321l-.619,2.777a.652.652,0,0,0,.78.78l2.753-.665a.65.65,0,0,0,.321-.184l.757-.757L31.1,50.9Z"
+                      transform="translate(-20.819 -36.854)" />
+                <path fill="currentColor"
+                      d="M81.9,5.4,79.771,3.262a.65.65,0,0,0-.918,0L77.5,4.615l3.052,3.052L81.9,6.313a.65.65,0,0,0,0-.918Z"
+                      transform="translate(-57.792 0)" />
+            </g>
+        </symbol>
+    {% endblock %}
+</svg>
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('app') }}
+
+{% endblock %}
+</body>
+</html>

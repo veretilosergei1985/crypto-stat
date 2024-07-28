@@ -1,0 +1,235 @@
+.dataTables_length {
+    display: none;
+}
+
+.dataTables_paginate > ul.pagination {
+    display: inline-block;
+    padding-left: 0;
+    border-radius: 4px;
+}
+
+.dataTables_paginate > ul.pagination > li {
+    display: inline;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.pagination > .disabled > a,
+.pagination > .disabled > a:focus,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > span,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > span:hover {
+    color: #D6DBE0;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #D6DBE0;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    color: inherit;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 4px 10px;
+    position: relative;
+    text-decoration: none;
+}
+
+.pagination > li > a, .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.row:last-child {
+    overflow: hidden;
+}
+
+.paginate_button.active > a {
+    color: var(--color-white);
+    background-color: #0C1E5E;
+    border-color: #0C1E5E;
+    opacity: 1;
+}
+
+table.table-bordered.dataTable tbody td {
+    border-bottom: 1px solid var(--color-lightgray);
+}
+
+.dob > .dob__column > .form__item {
+    margin-bottom: 0;
+}
+
+.dataTables_filter {
+    display: none;
+}
+
+table.dataTable thead .sorting_disabled:after {
+    display: none;
+}
+
+.no-results-box {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.dataTable.table th:first-child, .table td:first-child {
+    padding-left: 20px;
+}
+
+table.dataTable {
+    border-collapse: collapse !important;
+}
+
+.radios.radios--four {
+    flex-wrap: inherit;
+}
+
+.plan-radio__control:disabled~.plan-radio__content .plan-radio__icon {
+    background-color: var(--color-lightgray4);
+}
+
+.button--disabled {
+    background: #A6A8A8;
+    border-color: #A6A8A8;
+    cursor: no-drop;
+}
+
+.button--disabled:hover {
+    background: #A6A8A8;
+    border-color: #A6A8A8;
+}
+
+
+.ve-pagination,
+.ve-pagination-pager,
+.ve-pagination-li {
+    display: flex;
+    align-items: center;
+}
+
+.ve-pagination {
+    justify-content: space-between;
+    color: var(--color-dark2);
+}
+
+.ve-pagination-li {
+    justify-content: center;
+    height: 36px;
+    min-width: 36px;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #D6DBE0;
+    color: var(--color-dark2);
+    transition: opacity .3s ease;
+    cursor: pointer;
+}
+
+.ve-pagination-li:hover,
+.ve-pagination-li:focus,
+.ve-pagination-li:active {
+    color: var(--color-dark2);
+    opacity: .8;
+}
+
+.ve-pagination-li+.ve-pagination-li {
+    margin-left: -1px;
+}
+
+.ve-pagination-li:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.ve-pagination-li:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.ve-pagination-li-active,
+.ve-pagination-li-active:hover,
+.ve-pagination-li-active:focus,
+.ve-pagination-li-active:active {
+    color: var(--color-white);
+    background-color: #0C1E5E;
+    border-color: #0C1E5E;
+    opacity: 1;
+}
+
+.ve-pagination-li-prev,
+.ve-pagination-li-next {
+    position: relative;
+}
+
+.ve-pagination-li-prev::before,
+.ve-pagination-li-next::before{
+    content: '';
+    position: absolute; top: 50%; left: 50%;
+    width: 6px;
+    height: 6px;
+    border: 1px solid #0C1E5E;
+    border-top: none;
+    border-right: none;
+    margin: -3px 0 0 -3px;
+    transform: rotate(45deg);
+}
+
+.ve-pagination-li-next::before {
+    border: 1px solid #0C1E5E;
+    border-top: none;
+    border-left: none;
+    transform: rotate(-45deg);
+}
+
+.ve-pagination-disabled{
+    pointer-events: none;
+    opacity: 1;
+}
+
+.ve-pagination-li-disabled::before {
+    border-color: #D6DBE0;
+}
+
+.table table {
+    border-collapse: collapse;
+    width: 100%
+}
+
+#filterHistoryNotes.select__input option:first-child {
+    display: block;
+}
+
+.relative-position {
+    position: relative;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.table-no-results {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.page-patient-details .button--copy {
+    position: relative;
+    left: 12px;
+    padding: 5px 2px;
+}
